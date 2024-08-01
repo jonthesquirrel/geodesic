@@ -2,6 +2,9 @@ package jonthesquirrel.geodesic;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +19,13 @@ public class Geodesic implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+			dispatcher.register(CommandManager.literal("geo").executes(context -> {
+				context.getSource().sendFeedback(() -> Text.literal("Called /geo with no arguments."), false);
+				return 1;
+			}));
+		});
 
 		LOGGER.info("Hello Fabric world!");
 	}
