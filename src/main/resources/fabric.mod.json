@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "geodesic",
+	"version": "${version}",
+	"name": "geodesic",
+	"description": "Geodesic dome generator",
+	"authors": [
+		"jonthesquirrel"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/geodesic",
+		"sources": "https://github.com/jonthesquirrel/geodesic"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/geodesic/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"jonthesquirrel.geodesic.Geodesic"
+		],
+		"client": [
+			"jonthesquirrel.geodesic.GeodesicClient"
+		]
+	},
+	"mixins": [
+		"geodesic.mixins.json",
+		{
+			"config": "geodesic.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
