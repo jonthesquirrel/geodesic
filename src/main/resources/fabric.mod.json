@@ -11,7 +11,7 @@
 		"homepage": "https://modrinth.com/project/geodesic",
 		"sources": "https://github.com/jonthesquirrel/geodesic"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/geodesic/icon.png",
 	"environment": "*",
 	"entrypoints": {
